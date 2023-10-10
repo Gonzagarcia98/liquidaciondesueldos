@@ -3,31 +3,41 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import streamlit as st
 
-#Titulo y subtitulo
+#Titulo
 st.markdown("<h1 style='text-align: center; font-size: 54px; font-family: Verdana, sans-serif;'>Calculadora Sueldos</h1>", unsafe_allow_html=True)
-
 st.write("---")
+
 
 #Imagenes
 col1, col2, col3 = st.columns([0.5,3,0.5])
-
 with col1 :
     st.write("")
-
 with col2 : 
     st.image("imgs/logos_came_recortados.png",use_column_width=True)
-    
 with col3 :
     st.write("")
-
-
 st.write("---")
 
-#Input inicial 
-st.text_input('Indique el sueldo bruto')
-Sueldo_bruto = float(input())
 
-#Monto inicial
+#Input inicial 
+Sueldo_bruto = st.text_input('Indique el sueldo bruto', value="$")
+Sueldo_bruto = Sueldo_bruto.strip()
+Sueldo_bruto = Sueldo_bruto.replace("$", "").replace(".","").replace(",,",",").replace(",",".")
+#Manejo de errores - Input
+if Sueldo_bruto == "" or Sueldo_bruto == "$" or Sueldo_bruto == " " : 
+    aux3 = False 
+elif Sueldo_bruto == "0":
+    aux3 = False
+    st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
+else:
+    try:
+        monto_credito = float(Sueldo_bruto)
+        aux3 = True
+    except ValueError:
+        aux3 = False        
+        st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
+st.write("---")
+
 #Aportes empleado 
 #Definimos variables y calculos
 Aporte_jubilatorio = (0.11*Sueldo_bruto)
