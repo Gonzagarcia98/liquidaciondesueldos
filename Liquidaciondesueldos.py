@@ -38,8 +38,10 @@ else:
 st.write("---")
 #Checkbox
 st.write("Usted es/será")
-empleado = st.checkbox("Empleado")
-empleador = st.checkbox("Empleador")
+with col1: 
+    empleado = st.checkbox("Empleado")
+with col2: 
+    empleador = st.checkbox("Empleador")
 #Aportes empleado 
 #Definimos variables y calculos
 if st.button("Calcular"):
