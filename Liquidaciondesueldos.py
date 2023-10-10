@@ -37,8 +37,8 @@ else:
         st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 st.write("---")
 #Checkbox
-st.write("Usted es/será")
-colA, colB, colC, colD= st.columns([0.5, 2, 2, 0.5])
+st.write("**Usted es/será**")
+colA, colB, colC, colD= st.columns([1,5, 2, 2, 1.5])
 with colA:
     st.write("")
 with colB: 
