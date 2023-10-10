@@ -40,7 +40,7 @@ st.write("---")
 
 #Checkbox
 st.write("**Usted es/será**")
-colA, colB, colC, colD= st.columns([1.  5, 1, 1, 1.5])
+colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
 with colA:
     st.write("")
 with colB: 
