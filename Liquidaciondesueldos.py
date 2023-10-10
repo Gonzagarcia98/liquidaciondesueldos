@@ -5,9 +5,6 @@ import streamlit as st
 
 #Titulo y subtitulo
 
-st.title('Calculadora de sueldos CAME')
-st.header('Calculadora de aportes y cargas sociales para empresas')
-
 st.markdown(
     """
     <style>
