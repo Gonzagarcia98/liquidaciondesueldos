@@ -79,7 +79,7 @@ if aux3 == True:
     c.drawString(90, 750, texto)
     c.drawString(90, 700, texto2)
     # Agregar una imagen al PDF
-    imagen_filename = r"Z:\- LOGOS\CAME\CAME_alta.jpg"  # Reemplaza con el nombre de tu imagen
+    imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
     c.drawImage(imagen_filename, 100, 500, width=200, height=100)
     c.save()
     print(f"Se ha creado el archivo PDF: {pdf_filename}")
