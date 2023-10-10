@@ -37,10 +37,11 @@ else:
         st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 st.write("---")
 #Checkbox
+colA, colB = st.columns(2) 
 st.write("Usted es/será")
-with col1: 
+with colA: 
     empleado = st.checkbox("Empleado")
-with col2: 
+with colB: 
     empleador = st.checkbox("Empleador")
 #Aportes empleado 
 #Definimos variables y calculos
