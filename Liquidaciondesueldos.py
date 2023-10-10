@@ -18,13 +18,6 @@ with col3 :
     st.write("")
 st.write("---")
 
-#Checkbox
-st.write("Usted es/será")
-empleado = st.checkbox("Empleado")
-empleador = st.checkbox("Empleador")
-
-
-
 #Input inicial 
 Sueldo_bruto = st.text_input('Indique el sueldo bruto', value="$")
 Sueldo_bruto = Sueldo_bruto.strip()
@@ -43,6 +36,10 @@ else:
         aux3 = False        
         st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 st.write("---")
+#Checkbox
+st.write("Usted es/será")
+empleado = st.checkbox("Empleado")
+empleador = st.checkbox("Empleador")
 #Aportes empleado 
 #Definimos variables y calculos
 if st.button("Calcular"):
