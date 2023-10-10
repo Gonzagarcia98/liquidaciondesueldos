@@ -31,7 +31,7 @@ elif Sueldo_bruto == "0":
     st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 else:
     try:
-        monto_credito = float(Sueldo_bruto)
+        Sueldo_bruto = float(Sueldo_bruto)
         aux3 = True
     except ValueError:
         aux3 = False        
