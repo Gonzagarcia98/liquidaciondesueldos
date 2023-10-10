@@ -38,13 +38,14 @@ else:
 st.write("---")
 #Checkbox
 st.write("Usted es/será")
-colA, colB, colC= st.columns([0.5, 3, 0.5])
+colA, colB, colC, colD= st.columns([0.5, 2, 2, 0.5])
 with colA:
     st.write("")
 with colB: 
     empleado = st.checkbox("Empleado") 
+with colC:    
     empleador = st.checkbox("Empleador")
-with colC:
+with colD:
     st.write("")
 #Aportes empleado 
 #Definimos variables y calculos
