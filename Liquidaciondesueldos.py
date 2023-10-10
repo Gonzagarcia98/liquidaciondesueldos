@@ -3,16 +3,29 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import streamlit as st
 
-col1, col2, col3 = st.columns([1,3,1])
 #Titulo y subtitulo
-with col1:
-    st.write("")
-with col2:
-    st.title('Calculadora de sueldos CAME')
-    st.header('Calculadora de aportes y cargas sociales para empresas')
-with col3:
-    st.write ("")
 
+st.title('Calculadora de sueldos CAME')
+st.header('Calculadora de aportes y cargas sociales para empresas')
+
+st.markdown(
+    """
+    <style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown('<div class="center"><h1 class="title">Título Centrado</h1></div>', unsafe_allow_html=True)
 #Input inicial 
 st.text_input('Indique el sueldo bruto')
 Sueldo_bruto = float(input())
