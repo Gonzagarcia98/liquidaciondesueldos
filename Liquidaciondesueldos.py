@@ -4,25 +4,10 @@ from reportlab.pdfgen import canvas
 import streamlit as st
 
 #Titulo y subtitulo
+st.markdown("<h1 style='text-align: center; font-size: 54px; font-family: Verdana, sans-serif;'>Calculadora Sueldos</h1>", unsafe_allow_html=True)
 
-st.markdown(
-    """
-    <style>
-    .center-top {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .title {
-        font-size: 36px;
-        font-weight: bold;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown('<div class="center-top"><h1 class="title">Calculadora de sueldos CAME</h1></div>', unsafe_allow_html=True)
+st.write("---")
+
 #Input inicial 
 st.text_input('Indique el sueldo bruto')
 Sueldo_bruto = float(input())
