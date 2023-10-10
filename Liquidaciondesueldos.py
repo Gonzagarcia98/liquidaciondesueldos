@@ -11,7 +11,7 @@ st.header('Calculadora de aportes y cargas sociales para empresas')
 st.markdown(
     """
     <style>
-    .center {
+    .center-top {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,7 +25,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown('<div class="center"><h1 class="title">Título Centrado</h1></div>', unsafe_allow_html=True)
+st.markdown('<div class="center-top"><h1 class="title">Calculadora de sueldos CAME</h1></div>', unsafe_allow_html=True)
 #Input inicial 
 st.text_input('Indique el sueldo bruto')
 Sueldo_bruto = float(input())
