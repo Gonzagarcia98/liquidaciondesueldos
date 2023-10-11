@@ -50,24 +50,15 @@ elif opciones_seleccion == "Empleador":
     st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
 
-st.markdown(
-    """
-    <style>
-    .radio-container {
-        display: flex;
-        flex-direction: row;
-    }
-    .radio-container .stRadio {
-        flex: 1;
-        margin-right: 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-with st.markdown('<div class="radio-container">', unsafe_allow_html=True):
-    opcion_seleccionada = st.radio("Selecciona una opción:", ["Empleado", "Empleador"])
+col1, col2, col3, col4 = st.beta_columns(4)
+with col1:
+    opcion0 = st.write("")
+with col2:
+    opcion1 = st.radio("Empleado", ["Seleccionar"])
+with col3:
+    opcion2 = st.radio("Empleador", ["Seleccionar"])
+with col4:
+    opcion3 = st.write("")
 
 #Aportes empleado 
 #Definimos variables y calculos
