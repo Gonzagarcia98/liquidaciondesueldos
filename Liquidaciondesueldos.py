@@ -40,12 +40,32 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
+colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
+with colA:
+    st.write("")
 opciones_seleccion = st.radio("Seleccione una opción",["Empleado", "Empleador"])
 if opciones_seleccion == "Empleado":
     st.write("Seleccionaste la opción empleado")
 elif opciones_seleccion == "Empleador":
     st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
+
+st.markdown(
+    """
+    <style>
+    .radio-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .radio-container .stRadio {
+        flex: 1;
+        margin-right: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
 
