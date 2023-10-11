@@ -138,7 +138,7 @@ with colC:
         st.write("")
 with colD:       
     if aux1 == True:      
-        st.write("***DETALLE DE DESCUENTOS***")
+        st.info("***DETALLE DE APORTES***")
         st.write(f"**Aporte jubilatorio (11%):** ${lista_variables[0]}")
         st.write(f"**Obra social (3%):** ${lista_variables[1]}")
         st.write(f"**Pami (3%):** ${lista_variables[2]}")
@@ -146,7 +146,7 @@ with colD:
         st.write(f"**Sindicato (2%):** ${lista_variables[4]}") 
 with colE:
     if aux1 == True:
-        st.write("***DETALLE DE CARGAS SOCIALES***")
+        st.info("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"**Jubilación (16%):** ${lista_variables[0]}")
         st.write(f"**Obra social (6%):** ${lista_variables[1]}")
         st.write(f"**Pami (1,9%):** ${lista_variables[2]}")
