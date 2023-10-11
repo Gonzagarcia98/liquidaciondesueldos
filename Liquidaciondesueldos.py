@@ -47,7 +47,7 @@ st.write("---")
 #APORTES EMPLEADO
 colA, colB= st.columns(2)
 aux1 = False
-aux2= False
+aux2 = False
 with colA:
     if st.button("Calcular"):
         if aux3 == True:
@@ -113,7 +113,7 @@ with colA:
                 aux2 = True
                         
                 pdf_buffer = BytesIO()
-                    # Generar el PDF
+                # Generar el PDF
                 c = canvas.Canvas(pdf_buffer, pagesize=letter)
                 pdf_filename = "Cargas Sociales - Empleador.pdf"
                 texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}"
