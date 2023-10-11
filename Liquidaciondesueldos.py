@@ -185,11 +185,11 @@ estilo_cuadro = """
 st.markdown(estilo_cuadro, unsafe_allow_html=True)
 
 # Agrega tus elementos dentro del cuadro
-st.markdown('<div class="styled-box">')
+st.markdown('<div class="styled-box">',unsafe_allow_html=True)
 st.write(f"**Jubilación (16%):** ${lista_variables[0]}")
 st.write(f"**Obra social (6%):** ${lista_variables[1]}")
 st.write(f"**Pami (1,9%):** ${lista_variables[2]}")
 st.write(f"**Anses (4,7%):** ${lista_variables[3]}")
 st.write(f"**FNE (0,3%):** ${lista_variables[4]}")
 st.write(f"**Seguro de vida (0,3%):** ${lista_variables[5]}")
-st.markdown('</div>')
+st.markdown('</div>',unsafe_allow_html=True)
