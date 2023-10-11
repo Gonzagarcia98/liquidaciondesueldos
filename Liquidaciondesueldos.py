@@ -149,7 +149,7 @@ with colB:
             else:
                 st.write("")    
 st.write("---") 
-if aux2 == True:      
+if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
         st.write(f"Aporte jubilatorio: {lista_variables[0]}")
         st.write(f"Obra social: {lista_variables[1]}")
