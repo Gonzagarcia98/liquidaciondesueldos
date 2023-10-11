@@ -118,7 +118,7 @@ with colAA:
         # Agregar el estilo CSS personalizado utilizando st.markdown      
             if aux1 == True :
                 st.markdown(custom_css, unsafe_allow_html=True)
-                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[13]}</div>'
+                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[12]}</div>'
                 st.markdown('<div class="subheader">El sueldo neto es:</div>', unsafe_allow_html=True)
                 st.markdown(tarjeta, unsafe_allow_html=True)
                 st.markdown('</div></div>', unsafe_allow_html=True)
