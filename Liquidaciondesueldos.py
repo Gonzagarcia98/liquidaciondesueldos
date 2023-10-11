@@ -42,7 +42,7 @@ st.write("---")
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 aux1 = False
-colA, colB= st.columns([0.5, 1.5])
+colA, colB, colAA= st.columns([0.5, 0,3, 1.5])
 with colA:
     if st.button("Calcular", use_container_width = True):
         if aux3 == True: 
@@ -102,6 +102,8 @@ with colA:
                 pdf_buffer.seek(0)
                 st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename,use_container_width = True)
 with colB:
+    st.write("")
+with colAA:
             custom_css = """
         <style>
             .tarjeta {
@@ -130,7 +132,7 @@ with colB:
             else:
                 st.write("")
 st.write("---")
-colC, colD, colE, colF= st.columns([1,1.5,1.5,1])
+colC, colD, colE, colF= st.columns([1,2,2,1])
 with colC:
     if aux1 ==True:
         st.write("")
