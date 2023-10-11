@@ -66,25 +66,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-
-
-
-#Checkbox
-st.write("**Usted es/será**")
-colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
-with colA:
-    st.write("")
-with colB: 
-    empleado = st.checkbox("Empleado") 
-with colC:    
-    empleador = st.checkbox("Empleador")
-with colD:
-    st.write("")
-if empleado:
-    empleador = False
-elif empleador:
-    empleado = False
+with st.markdown('<div class="radio-container">', unsafe_allow_html=True):
+    opcion_seleccionada = st.radio("Selecciona una opción:", ["Empleado", "Empleador"])
 
 #Aportes empleado 
 #Definimos variables y calculos
