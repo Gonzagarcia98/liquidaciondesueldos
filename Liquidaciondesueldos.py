@@ -40,21 +40,20 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
-col1, col2, col3, col4 = st.columns(4)
 opciones_seleccion = st.radio("Seleccione una opción",["Empleado", "Empleador"])
 if opciones_seleccion == "Empleado":
-    st.write("Seleccionaste la opción empleado") in col2
+    st.write("Seleccionaste la opción empleado")
 elif opciones_seleccion == "Empleador":
-    st.write("Seleccionaste la opción Empleador") in col3
+    st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     opcion0 = st.write("")
 with col2:
-    opcion1 = st.radio("Empleado", ["Seleccionar"])
+     st.radio = "Empleado"
 with col3:
-    opcion2 = st.radio("Empleador", ["Seleccionar"])
+    st.radio = "Empleador"
 with col4:
     opcion3 = st.write("")
 
