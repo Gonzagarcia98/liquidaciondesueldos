@@ -46,6 +46,7 @@ st.write("---")
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 colA, colB= st.columns(2)
+aux1 = False
 with colA:
     if st.button("Calcular"):
         if aux3 == True:
@@ -69,9 +70,7 @@ with colA:
                     lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                     lista_variables[i] = lista_variables[i].replace(".",",")
                     lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux1 = True
-            
-                st.write(f"El sueldo neto a cobrar luego del descuento de los aportes es de: **${lista_variables[5]}")
+                aux1 = True            
                 st.write("***DETALLE DE DESCUENTOS***")
                 st.write(f"Aporte jubilatorio: {lista_variables[0]}")
                 st.write(f"Obra social: {lista_variables[1]}")
