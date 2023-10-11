@@ -71,23 +71,23 @@ if st.button("Calcular"):
         elif opcion_seleccionada == "Empleador":
         #CARGAS SOCIALES DEL EMPLEADOR
         #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
-            Jubilacion = 0.16*Sueldo_bruto
+            Jubilacion = (0.16*Sueldo_bruto)
             #OCTAVO CALCULO - OBRA SOCIAL EMPLEADOR
-            Obra_social_empleador = 0.03*Sueldo_bruto
+            Obra_social_empleador = (0.03*Sueldo_bruto)
             #NOVENO CALCULO - PAMI EMPLEADOR
-            Pami_empleador = 0.019*Sueldo_bruto
+            Pami_empleador = (0.019*Sueldo_bruto)
             #DECIMO CALCULO - ANSES
-            Anses = 0.047*Sueldo_bruto
+            Anses = (0.047*Sueldo_bruto)
             #DECIMOPRIMER CALCULO - FNE
-            Fne = 0.0094*Sueldo_bruto
+            Fne = (0.0094*Sueldo_bruto)
             #DECIMOSEGUNDO CALCULO - SEGURO DE VIDA
-            Seguro_vida = 0.003*Sueldo_bruto
+            Seguro_vida = (0.003*Sueldo_bruto)
             #DECIMOCUARTO CALCULO - TOTAL DE CARGAS SOCIALES
             Cargas_sociales = Jubilacion+Obra_social_empleador+Pami_empleador+Anses+Fne+Seguro_vida
             Cargas_sociales
 
 #REEEMPLAZAMS LOS . DE LOS MILES
-        lista_variables = [Aporte_jubilatorio, Obra_social,Pami,FAECyS,Sindicato,Jubilacion,Obra_social_empleador,Pami_empleador,Anses,Fne,Seguro_vida,Cargas_sociales,Sueldo_neto]
+        lista_variables = [Jubilacion, Aporte_jubilatorio, Obra_social,Pami,FAECyS,Sindicato,Jubilacion,Obra_social_empleador,Pami_empleador,Anses,Fne,Seguro_vida,Cargas_sociales,Sueldo_neto]
         for i in range (len(lista_variables)) :
             lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
             lista_variables[i] = lista_variables[i].replace(".",",")
