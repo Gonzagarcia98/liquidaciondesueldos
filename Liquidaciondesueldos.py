@@ -69,6 +69,13 @@ if st.button("Calcular"):
                 lista_variables[i] = lista_variables[i].replace(" ",".")
             
             st.write(f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}")
+            st.write("***DETALLE DE DESCUENTOS***")
+            st.write(f"Aporte jubilatorio: {Aporte_jubilatorio}")
+            st.write(f"Obra social: {Obra_social}")
+            st.write(f"Pami: {Pami}")
+            st.write(F"Faecys: {FAECyS}")
+            st.write(f"Sindicato: {Sindicato}")
+        
             pdf_buffer = BytesIO()
             # Generar el PDF
             c = canvas.Canvas(pdf_buffer, pagesize=letter)
