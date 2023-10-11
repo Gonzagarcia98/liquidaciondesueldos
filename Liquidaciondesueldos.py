@@ -42,7 +42,7 @@ st.write("---")
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 aux1 = False
-colA, colB= st.columns([0.3, 1.7])
+colA, colB= st.columns([0.5, 1.5])
 with colA:
     if st.button("Calcular", use_container_width = True):
         if aux3 == True: 
@@ -130,7 +130,7 @@ with colB:
             else:
                 st.write("")
 st.write("---")
-colC, colD, colE, colF= st.columns(4)
+colC, colD, colE, colF= st.columns([1,1.5,1.5,1])
 with colC:
     if aux1 ==True:
         st.write("")
