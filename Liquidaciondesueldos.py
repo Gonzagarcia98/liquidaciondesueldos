@@ -70,14 +70,8 @@ with colA:
                     lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                     lista_variables[i] = lista_variables[i].replace(".",",")
                     lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux1 = True            
-                st.write("***DETALLE DE DESCUENTOS***")
-                st.write(f"Aporte jubilatorio: {lista_variables[0]}")
-                st.write(f"Obra social: {lista_variables[1]}")
-                st.write(f"Pami: {lista_variables[2]}")
-                st.write(F"Faecys: {lista_variables[3]}")
-                st.write(f"Sindicato: {lista_variables[4]}")
-            
+                aux1 = True
+        
                 pdf_buffer = BytesIO()
                 # Generar el PDF
                 c = canvas.Canvas(pdf_buffer, pagesize=letter)
@@ -153,3 +147,11 @@ with colB:
                 #st.write(f"# $**{monto_final}**")
             else:
                 st.write("")    
+st.write("---") 
+if aux1 == True:      
+        st.write("***DETALLE DE DESCUENTOS***")
+        st.write(f"Aporte jubilatorio: {lista_variables[0]}")
+        st.write(f"Obra social: {lista_variables[1]}")
+        st.write(f"Pami: {lista_variables[2]}")
+        st.write(F"Faecys: {lista_variables[3]}")
+        st.write(f"Sindicato: {lista_variables[4]}")
