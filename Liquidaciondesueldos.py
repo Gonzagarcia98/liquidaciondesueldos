@@ -132,7 +132,7 @@ with colAA:
             else:
                 st.write("")
 st.write("---")
-colC, colD, colE, colF= st.columns([1,3,3,1])
+colC, colD, colE, colF= st.columns([0.3,4,4,0.3])
 with colC:
     if aux1 ==True:
         st.write("")
