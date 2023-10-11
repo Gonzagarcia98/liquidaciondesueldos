@@ -7,8 +7,7 @@ import streamlit as st
 st.markdown("<h1 style='text-align: center; font-size: 54px; font-family: Verdana, sans-serif;'>Calculadora Sueldos</h1>", unsafe_allow_html=True)
 st.write("---")
 
-
-#IMAGEENES
+#IMAGENES
 col1, col2, col3 = st.columns([0.5,3,0.5])
 with col1 :
     st.write("")
@@ -51,31 +50,41 @@ st.write("---")
 
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
-if opcion_seleccionada == "Empleado":
-    if st.button("Calcular"):
-        if aux3 == True:
-
+if st.button("Calcular"):
+    if aux3 == True:
+        if opcion_seleccionada == "Empleado":   
+            #APORTES EMPLEADO
+            #PRIMER CALCULO - APORTE JUBILATORIO
             Aporte_jubilatorio = (0.11*Sueldo_bruto)
+            #SEGUNDO CALCULO - OBRA SOCIAL
             Obra_social = (0.06*Sueldo_bruto)
+            #TERCER CALCULO - PAMI
             Pami = (0.03*Sueldo_bruto)
+            #CUARTO CALCULO - FAECYS
             FAECyS = (0.005*Sueldo_bruto)
+            #QUINTO CALCULO - SINDICATO
             Sindicato = (0.02*Sueldo_bruto)
-#CALCULAMOS EL NETO LUEGO DE APORTES
+            #SEXTO CALCULO - SUELDO NETO
             Sueldo_neto = Sueldo_bruto-(Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
             st.write = f"El sueldo neto a cobrar luego de los descuentos de los aportes es de {Sueldo_neto}"
-
-#CARGAS SOCIALES DEL EMPLEADOR
-#DEFINIMOS VARIABLES DEL EMPLEADOR
-        Jubilacion = 0.16*Sueldo_bruto
-        Obra_social_empleador = 0.03*Sueldo_bruto
-        Pami_empleador = 0.019*Sueldo_bruto
-        Anses = 0.047*Sueldo_bruto
-        Fne = 0.0094*Sueldo_bruto
-        Seguro_vida = 0.003*Sueldo_bruto
-
-#CALCULAMOS EL TOTAL DE CARGAS SOCIALES
-        Cargas_sociales = Jubilacion+Obra_social_empleador+Pami_empleador+Anses+Fne+Seguro_vida
-        Cargas_sociales
+    
+        elif opcion_seleccionada == "Empleador":
+        #CARGAS SOCIALES DEL EMPLEADOR
+        #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
+            Jubilacion = 0.16*Sueldo_bruto
+            #OCTAVO CALCULO - OBRA SOCIAL EMPLEADOR
+            Obra_social_empleador = 0.03*Sueldo_bruto
+            #NOVENO CALCULO - PAMI EMPLEADOR
+            Pami_empleador = 0.019*Sueldo_bruto
+            #DECIMO CALCULO - ANSES
+            Anses = 0.047*Sueldo_bruto
+            #DECIMOPRIMER CALCULO - FNE
+            Fne = 0.0094*Sueldo_bruto
+            #DECIMOSEGUNDO CALCULO - SEGURO DE VIDA
+            Seguro_vida = 0.003*Sueldo_bruto
+            #DECIMOCUARTO CALCULO - TOTAL DE CARGAS SOCIALES
+            Cargas_sociales = Jubilacion+Obra_social_empleador+Pami_empleador+Anses+Fne+Seguro_vida
+            Cargas_sociales
 
 #REEEMPLAZAMS LOS . DE LOS MILES
         lista_variables = [Aporte_jubilatorio, Obra_social,Pami,FAECyS,Sindicato,Jubilacion,Obra_social_empleador,Pami_empleador,Anses,Fne,Seguro_vida,Cargas_sociales,Sueldo_neto]
