@@ -40,8 +40,6 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
-with colA:
-    st.write("")
 opciones_seleccion = st.radio("Seleccione una opción",["Empleado", "Empleador"])
 if opciones_seleccion == "Empleado":
     st.write("Seleccionaste la opción empleado")
