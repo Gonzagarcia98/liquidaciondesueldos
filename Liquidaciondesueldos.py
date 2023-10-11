@@ -95,8 +95,8 @@ if st.button("Calcular"):
 #DESCARGAMOS EL PDF
         pdf_filename = "Liquidación de sueldos 2.pdf"
         c = canvas.Canvas(pdf_filename, pagesize=letter)
-        texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[11]}"
-        texto2 = f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[12]}"
+        texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}"
+        texto2 = f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}"
         c.drawString(90, 750, texto)
         c.drawString(90, 700, texto2)
         # Agregar una imagen al PDF
