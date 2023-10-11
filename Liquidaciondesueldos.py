@@ -47,18 +47,22 @@ elif opcion_seleccionada == "Empleador":
 else:
     st.write("No seleccionaste ninguna opción")
 
+st.write("---")
+
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
-if st.button("Calcular"):
-    if aux3 == True:
+if opcion_seleccionada == "Empleado":
+    if st.button("Calcular"):
+        if aux3 == True:
 
-        Aporte_jubilatorio = (0.11*Sueldo_bruto)
-        Obra_social = (0.06*Sueldo_bruto)
-        Pami = (0.03*Sueldo_bruto)
-        FAECyS = (0.005*Sueldo_bruto)
-        Sindicato = (0.02*Sueldo_bruto)
+            Aporte_jubilatorio = (0.11*Sueldo_bruto)
+            Obra_social = (0.06*Sueldo_bruto)
+            Pami = (0.03*Sueldo_bruto)
+            FAECyS = (0.005*Sueldo_bruto)
+            Sindicato = (0.02*Sueldo_bruto)
 #CALCULAMOS EL NETO LUEGO DE APORTES
-        Sueldo_neto = Sueldo_bruto-(Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
+            Sueldo_neto = Sueldo_bruto-(Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
+            st.write = f"El sueldo neto a cobrar luego de los descuentos de los aportes es de {Sueldo_neto}"
 
 #CARGAS SOCIALES DEL EMPLEADOR
 #DEFINIMOS VARIABLES DEL EMPLEADOR
