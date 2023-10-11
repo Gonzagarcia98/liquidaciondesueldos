@@ -156,16 +156,3 @@ with colE:
 with colF:
     if aux1 == True:      
         st.write("")
-
-st.info("Estos son tus datos informativos.")
-
-# Aplica CSS para centrar el texto en st.info
-css = """
-<style>
-div[data-baseweb="card"] div[data-baseweb="typo"] {
-    text-align: center;
-}
-</style>
-"""
-
-st.markdown(css, unsafe_allow_html=True)
