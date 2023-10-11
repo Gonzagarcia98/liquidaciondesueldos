@@ -41,6 +41,7 @@ st.write("---")
 
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
+aux1 = False
 colA, colB= st.columns(2)
 with colA:
     if st.button("Calcular"):
@@ -56,32 +57,12 @@ with colA:
                 FAECyS = (0.005*Sueldo_bruto)
                 #QUINTO CALCULO - SINDICATO
                 Sindicato = (0.02*Sueldo_bruto)
+                #CALCULO DEL TOTAL DE APORTES  - SIN NUMERO
+                total_aportes = (Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
                 #SEXTO CALCULO - SUELDO NETO
-                Sueldo_neto = Sueldo_bruto-(Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
-                #REEEMPLAZAMS LOS . DE LOS MILES EMPLEADO
-                lista_variables = [Aporte_jubilatorio, Obra_social, Pami,FAECyS, Sindicato, Sueldo_neto, Sueldo_bruto]
-                for i in range (len(lista_variables)) :
-                    lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
-                    lista_variables[i] = lista_variables[i].replace(".",",")
-                    lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux3 = True
-        
-                pdf_buffer = BytesIO()
-                # Generar el PDF
-                c = canvas.Canvas(pdf_buffer, pagesize=letter)
-                pdf_filename = "Aportes - Empleado.pdf"
-                texto2 = f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}"
-                c.drawString(90, 700, texto2)
-                # Agregar una imagen al PDF
-                imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
-                c.drawImage(imagen_filename, 100, 500, width=200, height=100)
-                c.save()
-                print(f"Se ha creado el archivo PDF: {pdf_filename}")
-                pdf_buffer.seek(0)
-                st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
-        with colB:
-            #CARGAS SOCIALES DEL EMPLEADOR
-            #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
+                Sueldo_neto = Sueldo_bruto-total_aportes
+                #CARGAS SOCIALES DEL EMPLEADOR
+                #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
                 Jubilacion = (0.16*Sueldo_bruto)
                 #OCTAVO CALCULO - OBRA SOCIAL EMPLEADOR
                 Obra_social_empleador = (0.06*Sueldo_bruto)
@@ -95,21 +76,24 @@ with colA:
                 Seguro_vida = (0.003*Sueldo_bruto)
                 #DECIMOCUARTO CALCULO - TOTAL DE CARGAS SOCIALES
                 Cargas_sociales = Jubilacion+Obra_social_empleador+Pami_empleador+Anses+Fne+Seguro_vida
-
+                aux1 = True
                 #REEEMPLAZAMS LOS . DE LOS MILES EMPLEADOR
-                lista_variables = [Jubilacion, Obra_social_empleador, Pami_empleador, Anses, Fne, Seguro_vida,Cargas_sociales]
+                lista_variables = [Jubilacion, Obra_social_empleador, Pami_empleador, Anses, Fne, Seguro_vida,Cargas_sociales, Aporte_jubilatorio, Obra_social, Pami,FAECyS, Sindicato, Sueldo_neto, Sueldo_bruto, total_aportes]
                 for i in range (len(lista_variables)) :
                         lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                         lista_variables[i] = lista_variables[i].replace(".",",")
                         lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux3 = True
-                        
                 pdf_buffer = BytesIO()
+
+
                 # Generar el PDF
                 c = canvas.Canvas(pdf_buffer, pagesize=letter)
                 pdf_filename = "Cargas Sociales - Empleador.pdf"
-                texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}"
+                texto = f"Las cargas sociales que paga el empleador por un empleado son de: ${lista_variables[6]}"
+                texto = f"Los aportes que realiza el empleado son de: ${lista_variables[14]}"
                 c.drawString(90, 750, texto)
+
+
                 # Agregar una imagen al PDF
                 imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
                 c.drawImage(imagen_filename, 100, 500, width=200, height=100)
@@ -130,10 +114,15 @@ with colB:
         </style>
         """
         # Agregar el estilo CSS personalizado utilizando st.markdown      
-            if aux3 == True :
+            if aux1 == True :
                 st.markdown(custom_css, unsafe_allow_html=True)
-                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[5]}</div>'
+                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[13]}</div>'
                 st.markdown('<div class="subheader">El sueldo neto es:</div>', unsafe_allow_html=True)
+                st.markdown(tarjeta, unsafe_allow_html=True)
+                st.markdown('</div></div>', unsafe_allow_html=True)
+                st.markdown(custom_css, unsafe_allow_html=True)
+                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[6]}</div>'
+                st.markdown('<div class="subheader">El total de cargas sociales es:</div>', unsafe_allow_html=True)
                 st.markdown(tarjeta, unsafe_allow_html=True)
                 st.markdown('</div></div>', unsafe_allow_html=True)
                 #st.write(f"El precio sugerido es:")
@@ -141,8 +130,9 @@ with colB:
             else:
                 st.write("")
 st.write("---")
-with colA: 
-    if aux3 == True:      
+colC, colD= st.columns(2)
+with colC: 
+    if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
         st.write(f"**Aporte jubilatorio:** ${lista_variables[0]}")
         st.write(f"**Obra social:** ${lista_variables[1]}")
@@ -150,8 +140,8 @@ with colA:
         st.write(F"**Faecys:** ${lista_variables[3]}")
         st.write(f"**Sindicato:** ${lista_variables[4]}") 
     
-with colB:          
-    if aux3 == True:      
+with colD:          
+    if aux1 == True:      
         st.write("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"**Jubilación:** ${lista_variables[0]}")
         st.write(f"**Obra social:** ${lista_variables[1]}")
