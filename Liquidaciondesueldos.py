@@ -147,8 +147,7 @@ with colD:
         st.write(f"**Sindicato (2%):** ${lista_variables[4]}") 
 with colE:
     if aux1 == True:
-        st.markdown('<p style="text-align:center; font-size:20px;">DETALLE DE APORTES</p>', unsafe_allow_html=True)     
-        st.info("***DETALLE DE CARGAS SOCIALES***")
+        st.info(st.markdown('<p style="text-align:center; font-size:20px;">DETALLE DE APORTES</p>', unsafe_allow_html=True))
         st.write(f"**Jubilación (16%):** ${lista_variables[0]}")
         st.write(f"**Obra social (6%):** ${lista_variables[1]}")
         st.write(f"**Pami (1,9%):** ${lista_variables[2]}")
