@@ -148,7 +148,6 @@ with colB:
                 #st.write(f"# $**{monto_final}**")
             else:
                 st.write("")    
-st.write("---") 
 if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
         st.write(f"Aporte jubilatorio: {lista_variables[0]}")
@@ -179,7 +178,6 @@ with colB:
                 #st.write(f"# $**{monto_final}**")
             else:
                 st.write("") 
-st.write("---") 
 if aux2 == True:      
         st.write("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"Jubilación: {lista_variables[0]}")
