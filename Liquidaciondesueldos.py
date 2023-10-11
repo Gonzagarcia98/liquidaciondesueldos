@@ -44,7 +44,7 @@ st.write("---")
 aux1 = False
 colA, colB= st.columns([0.5, 1.2])
 with colA:
-    if st.button("Calcular", usecolumnwith = True):
+    if st.button("Calcular", use_container_width = True):
         if aux3 == True: 
                 #APORTES EMPLEADO
                 #PRIMER CALCULO - APORTE JUBILATORIO
@@ -100,7 +100,7 @@ with colA:
                 c.save()
                 print(f"Se ha creado el archivo PDF: {pdf_filename}")
                 pdf_buffer.seek(0)
-                st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename,usecolumnwith = True)
+                st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename,use_container_width = True)
 with colB:
             custom_css = """
         <style>
