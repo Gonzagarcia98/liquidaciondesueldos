@@ -47,16 +47,6 @@ elif opciones_seleccion == "Empleador":
     st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
 
-col1, col2, col3, col4 = st.columns(4)
-with col1:
-    opcion0 = st.write("")
-with col2:
-     st.radio = "Empleado"
-with col3:
-    st.radio = "Empleador"
-with col4:
-    opcion3 = st.write("")
-
 #Aportes empleado 
 #Definimos variables y calculos
 if st.button("Calcular"):
