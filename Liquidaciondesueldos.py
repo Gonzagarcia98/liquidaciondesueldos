@@ -40,9 +40,6 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
-colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
-with colA:
-    st.write("")
 opciones_seleccion = st.radio("Seleccione una opción",["Empleado", "Empleador"])
 if opciones_seleccion == "Empleado":
     st.write("Seleccionaste la opción empleado")
@@ -50,27 +47,6 @@ elif opciones_seleccion == "Empleador":
     st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
 
-
-
-
-
-
-
-#Checkbox
-st.write("**Usted es/será**")
-colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
-with colA:
-    st.write("")
-with colB: 
-    empleado = st.checkbox("Empleado") 
-with colC:    
-    empleador = st.checkbox("Empleador")
-with colD:
-    st.write("")
-if empleado:
-    empleador = False
-elif empleador:
-    empleado = False
 
 #Aportes empleado 
 #Definimos variables y calculos
