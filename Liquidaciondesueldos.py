@@ -40,7 +40,6 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
-colA, colB, colC, colD= st.columns([1.5, 1, 1, 1.5])
 with colA:
     st.write("")
 opciones_seleccion = st.radio("Seleccione una opción",["Empleado", "Empleador"])
