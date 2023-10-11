@@ -42,9 +42,9 @@ st.write("---")
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 aux1 = False
-colA, colB= st.columns([0.8, 1.2])
+colA, colB= st.columns([0.5, 1.2])
 with colA:
-    if st.button("Calcular"):
+    if st.button("Calcular", usecolumnwith = True):
         if aux3 == True: 
                 #APORTES EMPLEADO
                 #PRIMER CALCULO - APORTE JUBILATORIO
@@ -100,7 +100,7 @@ with colA:
                 c.save()
                 print(f"Se ha creado el archivo PDF: {pdf_filename}")
                 pdf_buffer.seek(0)
-                st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
+                st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename,usecolumnwith = True)
 with colB:
             custom_css = """
         <style>
@@ -130,8 +130,11 @@ with colB:
             else:
                 st.write("")
 st.write("---")
-colC, colD, colE= st.columns([1,0.5,1])
-with colC: 
+colC, colD, colE, colF= st.columns([1,0.5,0.5,1])
+with colC:
+    if aux1 ==True:
+        st.write("")
+with colD:       
     if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
         st.write(f"**Aporte jubilatorio:** ${lista_variables[0]}")
@@ -139,12 +142,8 @@ with colC:
         st.write(f"**Pami:** ${lista_variables[2]}")
         st.write(F"**Faecys:** ${lista_variables[3]}")
         st.write(f"**Sindicato:** ${lista_variables[4]}") 
-    
-with colD:
-    if aux1 == True:
-         st.write("")
 with colE:
-    if aux1 == True:      
+    if aux1 == True:
         st.write("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"**Jubilación:** ${lista_variables[0]}")
         st.write(f"**Obra social:** ${lista_variables[1]}")
@@ -152,3 +151,6 @@ with colE:
         st.write(F"**Anses:** ${lista_variables[3]}")
         st.write(F"**FNE:** ${lista_variables[4]}")
         st.write(F"**Seguro de vida:** ${lista_variables[5]}") 
+with colF:
+    if aux1 == True:      
+        st.write("")
