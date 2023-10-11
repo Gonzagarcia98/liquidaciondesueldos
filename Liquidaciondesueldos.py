@@ -138,7 +138,7 @@ with colC:
         st.write("")
 with colD:       
     if aux1 == True:  
-        st.info("    ***DETALLE DE DESCUENTOS***")
+        st.info("***    DETALLE DE DESCUENTOS***")
         st.write(f"**Aporte jubilatorio (11%):** ${lista_variables[0]}")
         st.write(f"**Obra social (3%):** ${lista_variables[1]}")
         st.write(f"**Pami (3%):** ${lista_variables[2]}")
