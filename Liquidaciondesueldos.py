@@ -38,14 +38,7 @@ else:
 st.write("---")
 
 #SELECCIONAMOS EMPLEADO O EMPLEADOR
-opcion_seleccionada = st.radio("**Usted es/será**", ["Empleado", "Empleador"], horizontal=True)
-if opcion_seleccionada == "Empleado":
-    st.write("Seleccionaste Empleado")
-elif opcion_seleccionada == "Empleador":
-    st.write("Seleccionaste Empleador")
-else:
-    st.write("No seleccionaste ninguna opción")
-
+opcion_seleccionada = st.radio("# **Usted es/será**", ["Empleado", "Empleador"], horizontal=True)
 st.write("---")
 
 #DEFINIMOS VARIABLES Y CALCULOS
