@@ -39,19 +39,12 @@ else:
         st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 st.write("---")
 
-#SELECCIONAMOS EMPLEADO O EMPLEADOR
-opcion_seleccionada = st.radio("# **Usted es/será**", ["Empleado", "Empleador"], horizontal=True)
-st.write("---")
-
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 colA, colB= st.columns(2)
-aux1 = False
-aux2 = False
 with colA:
     if st.button("Calcular"):
-        if aux3 == True:
-            if opcion_seleccionada == "Empleado":   
+        if aux3 == True: 
                 #APORTES EMPLEADO
                 #PRIMER CALCULO - APORTE JUBILATORIO
                 Aporte_jubilatorio = (0.11*Sueldo_bruto)
@@ -87,7 +80,9 @@ with colA:
                 pdf_buffer.seek(0)
                 st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
     
-            elif opcion_seleccionada == "Empleador":
+with colB:
+     if st.button("Calcular"):
+        if aux3 == True: 
             #CARGAS SOCIALES DEL EMPLEADOR
             #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
                 Jubilacion = (0.16*Sueldo_bruto)
@@ -147,27 +142,19 @@ with colB:
                 #st.write(f"El precio sugerido es:")
                 #st.write(f"# $**{monto_final}**")
             else:
-                st.write("")   
-                 
-            if aux2 == True :
-                st.markdown(custom_css, unsafe_allow_html=True)
-                tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[6]}</div>'
-                st.markdown('<div class="subheader">El total de cargas sociales será:</div>', unsafe_allow_html=True)
-                st.markdown(tarjeta, unsafe_allow_html=True)
-                st.markdown('</div></div>', unsafe_allow_html=True)
-                #st.write(f"El precio sugerido es:")
-                #st.write(f"# $**{monto_final}**")
-            else:
-                st.write("") 
-if aux1 == True:      
+                st.write("")
+st.write("---")
+with colA: 
+    if aux3 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
         st.write(f"**Aporte jubilatorio:** ${lista_variables[0]}")
         st.write(f"**Obra social:** ${lista_variables[1]}")
         st.write(f"**Pami:** ${lista_variables[2]}")
         st.write(F"**Faecys:** ${lista_variables[3]}")
-        st.write(f"**Sindicato:** ${lista_variables[4]}")    
-
-if aux2 == True:      
+        st.write(f"**Sindicato:** ${lista_variables[4]}") 
+    
+with colB:          
+    if aux3 == True:      
         st.write("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"**Jubilación:** ${lista_variables[0]}")
         st.write(f"**Obra social:** ${lista_variables[1]}")
