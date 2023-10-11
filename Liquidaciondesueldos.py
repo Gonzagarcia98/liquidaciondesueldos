@@ -42,7 +42,7 @@ st.write("---")
 #DEFINIMOS VARIABLES Y CALCULOS
 #APORTES EMPLEADO
 aux1 = False
-colA, colB= st.columns([0.5, 1.5])
+colA, colB= st.columns([0.8, 1.2])
 with colA:
     if st.button("Calcular"):
         if aux3 == True: 
@@ -130,7 +130,7 @@ with colB:
             else:
                 st.write("")
 st.write("---")
-colC, colD= st.columns([1.5, 0.5])
+colC, colD, colE= st.columns([1,0.5,1])
 with colC: 
     if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
@@ -140,7 +140,10 @@ with colC:
         st.write(F"**Faecys:** ${lista_variables[3]}")
         st.write(f"**Sindicato:** ${lista_variables[4]}") 
     
-with colD:          
+with colD:
+    if aux1 == True:
+         st.write("")
+with colE:
     if aux1 == True:      
         st.write("***DETALLE DE CARGAS SOCIALES***")
         st.write(f"**Jubilación:** ${lista_variables[0]}")
