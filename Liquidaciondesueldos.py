@@ -139,20 +139,20 @@ with colC:
 with colD:       
     if aux1 == True:      
         st.write("***DETALLE DE DESCUENTOS***")
-        st.write(f"**Aporte jubilatorio:** ${lista_variables[0]}")
-        st.write(f"**Obra social:** ${lista_variables[1]}")
-        st.write(f"**Pami:** ${lista_variables[2]}")
-        st.write(F"**Faecys:** ${lista_variables[3]}")
-        st.write(f"**Sindicato:** ${lista_variables[4]}") 
+        st.write(f"**Aporte jubilatorio (11%):** ${lista_variables[0]}")
+        st.write(f"**Obra social (3%):** ${lista_variables[1]}")
+        st.write(f"**Pami (3%):** ${lista_variables[2]}")
+        st.write(F"**Faecys (0,5%):** ${lista_variables[3]}")
+        st.write(f"**Sindicato (2%):** ${lista_variables[4]}") 
 with colE:
     if aux1 == True:
         st.write("***DETALLE DE CARGAS SOCIALES***")
-        st.write(f"**Jubilación:** ${lista_variables[0]}")
-        st.write(f"**Obra social:** ${lista_variables[1]}")
-        st.write(f"**Pami:** ${lista_variables[2]}")
-        st.write(F"**Anses:** ${lista_variables[3]}")
-        st.write(F"**FNE:** ${lista_variables[4]}")
-        st.write(F"**Seguro de vida:** ${lista_variables[5]}") 
+        st.write(f"**Jubilación (16%):** ${lista_variables[0]}")
+        st.write(f"**Obra social (6%):** ${lista_variables[1]}")
+        st.write(f"**Pami (1,9%):** ${lista_variables[2]}")
+        st.write(F"**Anses (4,7%):** ${lista_variables[3]}")
+        st.write(F"**FNE (0,3%):** ${lista_variables[4]}")
+        st.write(F"**Seguro de vida (0,3%):** ${lista_variables[5]}") 
 with colF:
     if aux1 == True:      
         st.write("")
