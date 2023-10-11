@@ -40,13 +40,14 @@ st.write("---")
 
 
 st.write("***Usted es/será***")
-opcion_seleccionada = st.radio("Selecciona una opción:", ["Empleado", "Empleador"])
+opcion_seleccionada = st.radio("Selecciona una opción:", ["Empleado", "Empleador"], horizontal=True)
 if opcion_seleccionada == "Empleado":
     st.write("Seleccionaste Empleado")
 elif opcion_seleccionada == "Empleador":
     st.write("Seleccionaste Empleador")
 else:
     st.write("No seleccionaste ninguna opción")
+
 
 #Aportes empleado 
 #Definimos variables y calculos
