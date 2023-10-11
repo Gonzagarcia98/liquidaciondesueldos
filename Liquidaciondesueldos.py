@@ -22,6 +22,7 @@ st.write("---")
 Sueldo_bruto = st.text_input('Indique el sueldo bruto', value="$")
 Sueldo_bruto = Sueldo_bruto.strip()
 Sueldo_bruto = Sueldo_bruto.replace("$", "").replace(".","").replace(",,",",").replace(",",".")
+
 #Manejo de errores - Input
 if Sueldo_bruto == "" or Sueldo_bruto == "$" or Sueldo_bruto == " " : 
     aux3 = False 
@@ -36,6 +37,17 @@ else:
         aux3 = False        
         st.markdown("<span style='color: red;'>Ingrese un monto válido porfavor.</span>", unsafe_allow_html=True)
 st.write("---")
+
+
+st.write("***Usted es/será***")
+opciones_seleccion = st.radio(["Empleado", "Empleador"])
+if opciones_seleccion == "Empleado":
+    st.write("Seleccionaste la opción empleado")
+elif opciones_seleccion == "Empleador":
+    st.write("Seleccionaste la opción Empleador")
+else:("No seleccionaste nada")
+
+
 
 
 #Checkbox
