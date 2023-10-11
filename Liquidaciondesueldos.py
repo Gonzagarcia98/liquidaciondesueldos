@@ -56,7 +56,7 @@ with colA:
                 #PRIMER CALCULO - APORTE JUBILATORIO
                 Aporte_jubilatorio = (0.11*Sueldo_bruto)
                 #SEGUNDO CALCULO - OBRA SOCIAL
-                Obra_social = (0.06*Sueldo_bruto)
+                Obra_social = (0.03*Sueldo_bruto)
                 #TERCER CALCULO - PAMI
                 Pami = (0.03*Sueldo_bruto)
                 #CUARTO CALCULO - FAECYS
@@ -92,7 +92,7 @@ with colA:
             #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
                 Jubilacion = (0.16*Sueldo_bruto)
                 #OCTAVO CALCULO - OBRA SOCIAL EMPLEADOR
-                Obra_social_empleador = (0.03*Sueldo_bruto)
+                Obra_social_empleador = (0.06*Sueldo_bruto)
                 #NOVENO CALCULO - PAMI EMPLEADOR
                 Pami_empleador = (0.019*Sueldo_bruto)
                 #DECIMO CALCULO - ANSES
