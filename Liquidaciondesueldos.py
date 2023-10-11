@@ -79,10 +79,7 @@ with colA:
                 print(f"Se ha creado el archivo PDF: {pdf_filename}")
                 pdf_buffer.seek(0)
                 st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
-    
-with colB:
-     if st.button("Calcular"):
-        if aux3 == True: 
+        with colB:
             #CARGAS SOCIALES DEL EMPLEADOR
             #SEPTIMO CALCULO - JUBILACIÓN EMPLEADOR
                 Jubilacion = (0.16*Sueldo_bruto)
