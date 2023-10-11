@@ -64,7 +64,7 @@ with colA:
                     lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                     lista_variables[i] = lista_variables[i].replace(".",",")
                     lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux1 = True
+                aux3 = True
         
                 pdf_buffer = BytesIO()
                 # Generar el PDF
@@ -102,7 +102,7 @@ with colA:
                         lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                         lista_variables[i] = lista_variables[i].replace(".",",")
                         lista_variables[i] = lista_variables[i].replace(" ",".")
-                aux2 = True
+                aux3 = True
                         
                 pdf_buffer = BytesIO()
                 # Generar el PDF
@@ -130,7 +130,7 @@ with colB:
         </style>
         """
         # Agregar el estilo CSS personalizado utilizando st.markdown      
-            if aux1 == True :
+            if aux3 == True :
                 st.markdown(custom_css, unsafe_allow_html=True)
                 tarjeta = f'<div class="tarjeta" style="font-size: 45px;font-weight: bold; ">${lista_variables[5]}</div>'
                 st.markdown('<div class="subheader">El sueldo neto es:</div>', unsafe_allow_html=True)
