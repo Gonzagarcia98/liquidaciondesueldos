@@ -47,6 +47,7 @@ elif opciones_seleccion == "Empleador":
     st.write("Seleccionaste la opción Empleador")
 else:("No seleccionaste nada")
 
+
 #Aportes empleado 
 #Definimos variables y calculos
 if st.button("Calcular"):
