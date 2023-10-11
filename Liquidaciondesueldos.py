@@ -59,7 +59,13 @@ if st.button("Calcular"):
             Sindicato = (0.02*Sueldo_bruto)
             #SEXTO CALCULO - SUELDO NETO
             Sueldo_neto = Sueldo_bruto-(Aporte_jubilatorio+Obra_social+Pami+FAECyS+Sindicato)
-            st.write = f"El sueldo neto a cobrar luego de los descuentos de los aportes es de {Sueldo_neto}"
+            #REEEMPLAZAMS LOS . DE LOS MILES EMPLEADO
+            lista_variables = [Aporte_jubilatorio, Obra_social, Pami,FAECyS, Sindicato, Sueldo_neto, Sueldo_bruto]
+            for i in range (len(lista_variables)) :
+                lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
+                lista_variables[i] = lista_variables[i].replace(".",",")
+                lista_variables[i] = lista_variables[i].replace(" ",".")
+            print(f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}")
     
         elif opcion_seleccionada == "Empleador":
         #CARGAS SOCIALES DEL EMPLEADOR
@@ -77,16 +83,14 @@ if st.button("Calcular"):
             Seguro_vida = (0.003*Sueldo_bruto)
             #DECIMOCUARTO CALCULO - TOTAL DE CARGAS SOCIALES
             Cargas_sociales = Jubilacion+Obra_social_empleador+Pami_empleador+Anses+Fne+Seguro_vida
-            Cargas_sociales
 
-#REEEMPLAZAMS LOS . DE LOS MILES
-        lista_variables = [Jubilacion, Aporte_jubilatorio, Obra_social,Pami,FAECyS,Sindicato,Jubilacion,Obra_social_empleador,Pami_empleador,Anses,Fne,Seguro_vida,Cargas_sociales,Sueldo_neto]
-        for i in range (len(lista_variables)) :
-            lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
-            lista_variables[i] = lista_variables[i].replace(".",",")
-            lista_variables[i] = lista_variables[i].replace(" ",".")
-        print(f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[12]}")
-        print(f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[11]}")
+            #REEEMPLAZAMS LOS . DE LOS MILES EMPLEADOR
+            lista_variables = [Jubilacion, Obra_social_empleador, Pami_empleador, Anses, Fne, Seguro_vida,Cargas_sociales]
+            for i in range (len(lista_variables)) :
+                    lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
+                    lista_variables[i] = lista_variables[i].replace(".",",")
+                    lista_variables[i] = lista_variables[i].replace(" ",".")
+                    print(f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}")
 
 #DESCARGAMOS EL PDF
         pdf_filename = "Liquidación de sueldos 2.pdf"
