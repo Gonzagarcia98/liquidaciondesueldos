@@ -156,3 +156,25 @@ with colE:
 with colF:
     if aux1 == True:      
         st.write("")
+st.markdown(
+    """
+    <style>
+    .square-box {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px; /* Ajusta el ancho según tus necesidades */
+    }
+    </style>
+    """
+)
+
+# Agrega tu contenido al contenedor HTML
+st.markdown('<div class="square-box">')
+st.write(f"**Jubilación (16%):** ${lista_variables[0]}")
+st.write(f"**Obra social (6%):** ${lista_variables[1]}")
+st.write(f"**Pami (1.9%):** ${lista_variables[2]}")
+st.write(f"**Anses (4.7%):** ${lista_variables[3]}")
+st.write(f"**FNE (0.3%):** ${lista_variables[4]}")
+st.write(f"**Seguro de vida (0.3%):** ${lista_variables[5]}")
+st.markdown('</div>')
