@@ -2,6 +2,8 @@ import reportlab as RL
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import streamlit as st
+import io
+from io import BytesIO
 
 #TITULO
 st.markdown("<h1 style='text-align: center; font-size: 54px; font-family: Verdana, sans-serif;'>Calculadora Sueldos</h1>", unsafe_allow_html=True)
@@ -65,7 +67,21 @@ if st.button("Calcular"):
                 lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                 lista_variables[i] = lista_variables[i].replace(".",",")
                 lista_variables[i] = lista_variables[i].replace(" ",".")
-            print(f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}")
+            
+            st.write(f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}")
+            pdf_buffer = BytesIO()
+            # Generar el PDF
+            c = canvas.Canvas(pdf_buffer, pagesize=letter)
+            pdf_filename = "Aportes - Empleado.pdf"
+            texto2 = f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}"
+            c.drawString(90, 700, texto2)
+            # Agregar una imagen al PDF
+            imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
+            c.drawImage(imagen_filename, 100, 500, width=200, height=100)
+            c.save()
+            print(f"Se ha creado el archivo PDF: {pdf_filename}")
+            pdf_buffer.seek(0)
+            st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
     
         elif opcion_seleccionada == "Empleador":
         #CARGAS SOCIALES DEL EMPLEADOR
@@ -90,17 +106,18 @@ if st.button("Calcular"):
                     lista_variables[i] = '{:,.2f}'.format(lista_variables[i]).replace(',', ' ')
                     lista_variables[i] = lista_variables[i].replace(".",",")
                     lista_variables[i] = lista_variables[i].replace(" ",".")
-                    print(f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}")
-
-#DESCARGAMOS EL PDF
-        pdf_filename = "Liquidación de sueldos 2.pdf"
-        c = canvas.Canvas(pdf_filename, pagesize=letter)
-        texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}"
-        texto2 = f"El sueldo neto a cobrar luego del descuento de los aportes es de: ${lista_variables[5]}"
-        c.drawString(90, 750, texto)
-        c.drawString(90, 700, texto2)
-        # Agregar una imagen al PDF
-        imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
-        c.drawImage(imagen_filename, 100, 500, width=200, height=100)
-        c.save()
-        print(f"Se ha creado el archivo PDF: {pdf_filename}")
+                    
+            st.write(f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}")
+            pdf_buffer = BytesIO()
+                # Generar el PDF
+            c = canvas.Canvas(pdf_buffer, pagesize=letter)
+            pdf_filename = "Cargas Sociales - Empleador.pdf"
+            texto = f"Los aportes que realiza el empleador en concepto de cargas sociales son de: ${lista_variables[6]}"
+            c.drawString(90, 750, texto)
+            # Agregar una imagen al PDF
+            imagen_filename = r"imgs/logos_came_recortados.png"  # Reemplaza con el nombre de tu imagen
+            c.drawImage(imagen_filename, 100, 500, width=200, height=100)
+            c.save()
+            print(f"Se ha creado el archivo PDF: {pdf_filename}")
+            pdf_buffer.seek(0)
+            st.download_button("Descargar PDF", pdf_buffer, file_name=pdf_filename)
