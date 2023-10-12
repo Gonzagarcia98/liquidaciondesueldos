@@ -16,7 +16,7 @@ col1, col2, col3 = st.columns([0.5,3,0.5])
 with col1 :
     st.write("")
 with col2 : 
-    st.image("imgs/logos_came_recortados.png",use_column_width=True)
+    st.image("imagenes\imagen came y comercio.jpg",use_column_width=True)
 with col3 :
     st.write("")
 st.write("---")
